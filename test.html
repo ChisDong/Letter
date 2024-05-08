@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Envelope + Letter (Open/Close on Click)</title>
+    <link rel="stylesheet" href="./test.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <video autoplay muted loop id="bg-video">
+        <source
+            src="Vẽ Hoa Hoạt Hình HD Video Sẵn có - Tải xuống Đoạn Video Ngay bây giờ - Hoa, Phát triển - Khái niệm, Hoạt hình - Sản phẩm nghệ thuật - iStock (online-video-cutter.com).mp4"
+            type="video/mp4" />
+        Your browser does not support the video tag.
+    </video>
+    <div class="container">
+        <div class="envelope-wrapper">
+            <div class="envelope">
+                <div class="letter">
+                    <div class="text">
+                        <p>Chin chào, là me đây!!.</p>
+                        <p>
+                            Bé dạo đây có ổn hong? Me cảm nhận được là bé vẫn đang rất ổn thậm chí là vui vẻ ha và điều
+                            đó thật tuyệt vời, nó cũng là những gì me luôn muốn dành cho bé. Có lẽ sự có mặt của me lúc
+                            này không còn phù hợp nữa và nó có thể làm cho bé khó chịu. Me thực sự xin lỗi vì điều đó,
+                            nhưng me rất muốn dành tặng cho bé món quà này tại vì có lần bé đã nói với me là “ziu
+                            học CNTT mà trước giờ chưa tặng me cái gì liên quan tới CNTT hết” Hì nên đây chính là lời
+                            hứa của me dành cho bé á. Có lẽ, me không phải là người hay thất hứa như vậy mà do chính
+                            cảm xúc của me đã làm cho me thất hứa nhiều lần với bé và nó cũng là nguồn cơn của mọi vấn
+                            đề trong hành trình này của me và bé. Me thực sự không muốn làm tổn thương bé nhưng đối diện
+                            với những cảm xúc thì me thường yếu đuối đến lạ cho đến bây giờ khi me ngồi và thực sự cảm
+                            nhận mình là bé thì me đã nhận ra mọi thứ và hối hận vì những gì đã qua. Hiện tại me đã và
+                            đang dần thay đổi hơn me không còn tiêu cực hay cảm xúc như trước nữa. Có lẽ sắp tới sẽ là
+                            một cuộc hành trình dài khi cả 2 không ở cạnh nhau được nữa me mong là bé vẫn sẽ luôn vui,
+                            bé nhớ ăn uống đầy đủ, đừng thức khuya nhiều quá nhen, mọi việc xuôn sẻ ha.
+                            Hẹn gặp bé ở một trang mới, trong một con người mới với một suy nghĩ mới.<br>
+                            Thank you for staying.<br>
+                            Thank you for loving.<br>
+                            Thank you for waiting.<br>
+                            Thank you for everything.<br>
+                            I am still here, not sure if I am waiting for you, but always behind you, so if you have any
+                            problems and want to share them with someone, just turn back and I will say hello. What
+                            makes you feel bad? <br>
+                            All wishes for you.<br>
+                            love you<br>
+                            Minh Chí
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="heart"></div>
+        </div>
+    </div>
+    <script>
+        const envelope = document.querySelector(".envelope-wrapper");
+        envelope.addEventListener("click", () => {
+            envelope.classList.toggle("flap");
+            // Check if the envelope is open (flap class is added)
+            if (envelope.classList.contains("flap")) {
+                // Play the audio
+                const audio = document.querySelector("audio");
+                audio.play();
+                const letter = document.querySelector(".letter");
+                letter.classList.add("show");
+            }
+        });
+    </script>
+
+    <audio autoplay>
+        <source src="HOÀNG DŨNG - TÔI LÀ AI TRONG EM - YÊN CONCERT.mp4" type="audio/mpeg" />
+        Your browser does not support the audio element.
+    </audio>
+</body>
+
+</html>

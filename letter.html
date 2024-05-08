@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Envelope + Letter (Open/Close on Click)</title>
+    <link rel="stylesheet" href="./style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <video autoplay muted loop id="bg-video">
+        <source
+            src="Vẽ Hoa Hoạt Hình HD Video Sẵn có - Tải xuống Đoạn Video Ngay bây giờ - Hoa, Phát triển - Khái niệm, Hoạt hình - Sản phẩm nghệ thuật - iStock (online-video-cutter.com).mp4"
+            type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="container">
+        <div class="envelope-wrapper">
+            <div class="envelope">
+                <div class="letter">
+                    <div class="text">
+                        <strong>Dear Person.</strong>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Numquam labore omnis minus maiores laboriosam, facere in beatae esse.
+                            àiohefhsdhfwefhioweiofweuifwehgfoiweyfowie
+                            ưeifhweoifweoifweiofweoifweoifwoifwoeifywe
+                            khưeuigfwegufguiwguiweguifwfguwefguiweguiw
+                            uỳwdgufiewfwguiguiwefguwegufguwegfuweguigu
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="heart"></div>
+        </div>
+    </div>
+    <script>
+        const envelope = document.querySelector('.envelope-wrapper');
+        envelope.addEventListener('click', () => {
+            envelope.classList.toggle('flap');
+            // Check if the envelope is open (flap class is added)
+            if (envelope.classList.contains('flap')) {
+                // Play the audio
+                const audio = document.querySelector('audio');
+                audio.play();
+                const letter = document.querySelector(".letter");
+                letter.classList.add("show");
+
+                
+            }
+        });
+    </script>
+
+    <audio autoplay>
+        <source src="HOÀNG DŨNG - NÉM CÂU YÊU VÀO KHÔNG TRUNG - OFFICIAL AUDIO." type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+</body>
+
+</html>

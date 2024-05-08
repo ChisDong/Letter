@@ -1,0 +1,175 @@
+:root {
+    --primary: #fff;
+    --bg-color: rgb(5, 53, 61);
+    --bg-envelope-color: #f7f3f3;
+    --envelope-tab: #faf7ec;
+    --envelope-cover: #fffcf1;
+    --shadow-color: rgba(0, 0, 0, 0.2);
+    --txt-color: #444;
+    --heart-color: rgb(247, 137, 230);
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+#bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+}
+
+.container>.envelope-wrapper {
+    background: var(--bg-envelope-color);
+    box-shadow: 0 0 40px var(--shadow-color);
+}
+
+.envelope {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.5);
+    width: 300px;
+    height: 230px;
+    border-radius: 30px;
+}
+
+.envelope-wrapper>.envelope::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    border-top: 130px solid var(--envelope-tab);
+    border-right: 150px solid transparent;
+    border-left: 150px solid transparent;
+    transform-origin: top;
+    transition: all 0.5s ease-in-out 0.7s;
+}
+
+.envelope-wrapper>.envelope::after {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    width: 0px;
+    height: 0px;
+    border-top: 130px solid transparent;
+    border-right: 150px solid var(--envelope-cover);
+    border-bottom: 100px solid var(--envelope-cover);
+    border-left: 150px solid var(--envelope-cover);
+}
+
+.envelope>.letter {
+    position: absolute;
+    right: -1%;
+    bottom: 6%;
+    width: 95%;
+    height: 90%;
+    background: var(--primary);
+    text-align: center;
+    transition: all 1s ease-in-out;
+    box-shadow: 0 0 5px var(--shadow-color);
+    padding: 15px 10px;
+    transform: scale(0.6);
+}
+
+
+.envelope.open .letter {
+    transform: scale(1.5);
+    bottom: 20%;
+}
+
+.goudy-bookletter-1911-regular {
+    font-family: "Goudy Bookletter 1911", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+.envelope>.letter>.text {
+    font-family: "Goudy bookletter 1911", serif;
+    color: var(--txt-color);
+    text-align: left;
+    font-size: 6.8px;
+    padding-top: 0px;
+}
+
+.heart {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg) scale(2);
+    width: 15px;
+    height: 15px;
+    background: var(--heart-color);
+    z-index: 4;
+    box-shadow: 0 1px 6px var(--shadow-color);
+    cursor: pointer;
+}
+
+.heart:before,
+.heart:after {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: var(--heart-color);
+    border-radius: 50%;
+}
+
+.heart:before {
+    top: -7.5px;
+}
+
+.heart:after {
+    right: 7.5px;
+}
+
+.flap>.envelope:before {
+    transform: rotateX(180deg);
+    transition-delay: 0.01s;
+    z-index: 0;
+}
+
+.flap>.envelope:after {
+    z-index: 0;
+}
+
+@keyframes letter {
+    0% {}
+
+    30% {
+        transform: translateY(-150px);
+    }
+
+    100% {
+        transform: scale(2.2);
+        z-index: 5;
+    }
+}
+
+.flap>.envelope>.letter {
+    animation-name: letter;
+    animation-duration: 10s;
+    animation-fill-mode: forwards;
+}
+
+.flap>.heart {
+    transform: rotate(90deg);
+    transition-duration: 2.5s;
+    z-index: -1;
+}
+
+.hidden {
+    visibility: hidden;
+}
