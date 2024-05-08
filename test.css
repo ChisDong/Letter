@@ -42,7 +42,7 @@ html {
     transform: translate(-50%, -50%) scale(1.5);
     width: 300px;
     height: 230px;
-    border-radius: 30px;
+    border-radius: 100px;
 }
 
 .envelope-wrapper>.envelope::before {
@@ -102,6 +102,10 @@ html {
     text-align: left;
     font-size: 6.8px;
     padding-top: 0px;
+}
+
+.envelope>.letter>.h1 {
+    font-family: "Goudy bookletter 1911", serif;
 }
 
 .heart {
